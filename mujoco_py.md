@@ -38,12 +38,14 @@ https://www.roboti.us/license.html
     MUJOCO_PY_MUJOCO_PATH=%USERPROFILE%\.mujoco\mujoco200\bin
     PATH=%USERPROFILE%\.mujoco\mujoco200\bin
 
+<!--
 同时添加vs环境变量，同样位置，点击系统变量新增以下，具体路径根据安装版本有所变化
 
     INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt;
     LIB=C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\um\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\lib\x64;
     PATH=C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64
     VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools
+-->
 
 ###    5、运行测试：
 
@@ -73,11 +75,7 @@ https://www.roboti.us/license.html
 
 ### 3、安装pip包
     
-    pip install gym
-    pip install Box2D
-    pip install atari-py
-    pip install cffi
-    pip install pygit2
+    pip install gym Box2D atari-py cffi pygit2 glfw imageio
 
 ### 4、测试
 
