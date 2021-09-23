@@ -46,7 +46,7 @@ RUN pip install \
         gym \
         pyvirtualdisplay 
 RUN conda install -y swig ipython ipykernel git unzip patchelf
-# 安装 mujoco和mujoco_py
+# 安装 mujoco和mujoco_py、安装atari、box2d
 RUN mkdir -p ~/.mujoco \
     && wget https://www.roboti.us/download/mujoco200_linux.zip -O mujoco.zip \
     && unzip mujoco.zip -d ~/.mujoco \
@@ -62,7 +62,10 @@ RUN pip install imagehash ipdb Pillow pycparser pytest pytest-instafail scipy sp
     pip install gym[box2d] && \
     pip install atari_py && \
     pip install -U gym[atari] && \
-    cp ~/.mujoco/mjkey.txt ~/.mujoco/mujoco200/bin/
+    cp ~/.mujoco/mjkey.txt ~/.mujoco/mujoco200/bin/ && \
+    wget http://www.atarimania.com/roms/Roms.rar && \
+    rar e Roms.rar ~/Roms/ && \
+    python -m atari_py.import_roms ~/Roms
 # 设置用户和root密码及工作目录
 USER root
 RUN echo "root:root" | chpasswd &&\
@@ -71,3 +74,4 @@ RUN echo "root:root" | chpasswd &&\
 USER ${NB_USER}
 WORKDIR "${HOME}/work"
 # ENTRYPOINT ["tini", "-g", "--"]
+# echo $PATH 显示路径
