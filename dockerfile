@@ -71,8 +71,3 @@ RUN echo "root:root" | chpasswd &&\
 USER ${NB_USER}
 WORKDIR "${HOME}/work"
 # ENTRYPOINT ["tini", "-g", "--"]
-## 增加安装libxrandr2 libxinerama1 libxcursor1 ，这些再试libccd2 libtinyxml2-8 libdart-external-lodepng6 libqhull8.0 glew-utils libglfw3
-# echo $PATH 显示路径
-# PATH=$PATH:~/.mujoco/mujoco200/bin 
-# PATH=$PATH:~/.mujoco/mujoco200/include
-# PATH=$PATH:~/.mujoco
